@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import logo1 from './logo1.png';
-import IMg from './IMg.jpg'
 import './App.css';
 
 class App extends Component {
@@ -10,8 +7,9 @@ class App extends Component {
 	<div className="App">
 		<h1>Profile</h1>
 		    
-		<img src={require("../IMg.png")} alt={"profile images"} />
-		
+			
+			<img src={require("../profile/IMg.jpg")} alt={"ChatterBox logo"}  />
+			<br />
 			<input className="my-4" />
 			<br/>
 			<input className="my-4"/>
@@ -20,7 +18,7 @@ class App extends Component {
 			<button class="btn btn-default">Done</button>
 		</div>	
 	</div>	
-    );
+	);
 }
 }
 
