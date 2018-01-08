@@ -2,7 +2,7 @@ import React from 'react';
 // eslint-disable-next-line
 import { Route, Link } from 'react-router-dom'
 import SideNav from 'react-sidenav';
-
+import './index.css'
 
 export default class App extends React.Component {
   constructor(props) {
@@ -41,15 +41,23 @@ export default class App extends React.Component {
                       </form>
                       </div>
 
-                      <ul className="nav nav-navbar list-inline pt-0">
-                          <li className="list-inline-item my-4"><a  data-placement="bottom" data-toggle="tooltip" data-original-title="Profilename"><h5>Bright Mabuza</h5></a>
-                          </li>
-                          <li className="list-inline-item imgs"><a href="" data-placement="bottom" data-toggle="tooltip" data-original-title="Profilename"><img src={require("../header/Icon.png")} alt={"ChatterBox logo"} /></a>
-                          </li> 
-                          <li className="list-inline-item imgs"><a href="" data-placement="bottom" data-toggle="tooltip" data-original-title="Profilename"><img src={require("../header/Icon.png")} alt={"ChatterBox logo"} /></a>
-                          </li>        
-                      </ul>
-
+                      <div className="row pt-0">
+                          <div className="list-item my-4 dropdown">
+                                  <a href="" className="dropbtn" data-placement="bottom" data-toggle="tooltip" data-original-title="Profilename"><h5>Bright Mabuza</h5></a>
+                                        <div class="dropdown-content my-5">
+                                            <a href="">Settings</a>
+                                            <a href="">Log Out</a>
+                                        </div>
+                          </div>
+                          <div className="list-item imgs">
+                                  <a href="" data-placement="bottom" data-toggle="tooltip" data-original-title="Profilename"><img src={require("../header/Icon.png")} alt={"ChatterBox logo"} /></a>
+                          </div>
+                          <div className="list-item imgs">
+                          <a href="" data-placement="bottom" data-toggle="tooltip" data-original-title="Profilename"><img src={require("../header/Icon.png")} alt={"ChatterBox logo"} /></a>
+                          </div>
+                      </div>
+                   
+                      
                     </div>
                   </nav>
                 </div>
