@@ -33,3 +33,79 @@ form.example::after {
   clear: both;
   display: table;
 }
+
+div.flex{
+  flex:1;
+ }
+ 
+.header{
+ 
+  background-color: #01B9BD !important;
+  color: #01B9BD;
+  
+}
+ div.flex>form>button{
+  box-shadow: 3px 5px 8px #666888;
+  background-color: #01B9BD ;
+  color:white;
+  border: none;
+ }
+
+ div.sidebar{
+  box-shadow: 3px 5px 8px #666888;
+  width: 300px;
+  height:auto;
+  background-color: #fefdfb;
+ }
+ .imgs{
+  height: 10px;
+  margin-top: -13px;
+ }
+
+ .text_box {
+  border-radius: 50px 50px 50px 50px !important;
+  border: none !important;
+  background-color: rgb(243, 243, 243) !important;
+  color: gray !important;
+}
+
+/* dropdown button Change color on hover */
+.dropbtn {
+
+  box-shadow: 3px 5px 8px #666888;
+  background-color: #01B9BD ;
+  color:white;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  margin-left: -34px;
+  background-color: #f9f9f9;
+  width: 300px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  text-decoration: none;
+
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}

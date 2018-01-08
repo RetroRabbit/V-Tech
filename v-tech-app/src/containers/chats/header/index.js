@@ -20,35 +20,47 @@ export default class App extends React.Component {
   }
   render() {
     return (
-            <div>
-            <nav className="navbar navbar-toggleable-md navbar-light bg-faded">
-              <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
-              </button>
-              
-              <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                <form className="form-inline my-2 my-lg-0">
-                  <button className="btn btn-outline-success mx-2 my-sm-0 " type="submit">NEW CHAT</button>
-                </form>
-                <form className="form-inline my-2 my-lg-0">
-                  <button className="btn btn-outline-success my-2 my-sm-0" type="submit">NEW GROUP</button>
-                </form>
-
-
-                <ul className="navbar nav navbar-pull-right">
-                    <li><a href="" data-placement="bottom" data-toggle="tooltip" data-original-title="Profilename">Bright Mabuza</a>
-                    </li>            
-                </ul>
-
-              </div>
-            </nav>
-              <div style={{ width: 270,height:700, backgroundColor: '#E91E63'}}> 
-                  <SideNav highlightColor='#E91E63' highlightBgColor='#00bcd4'>       
+            <div >
+                <div className="header">
+                <nav className="header navbar navbar-toggleable-md navbar-light bg-faded">
+                    <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span className="navbar-toggler-icon"></span>
+                    </button>
+                    
+                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                      <div className="navbar nav flex">
                       <form className="form-inline my-2 my-lg-0">
-                        <input className="my-4 " type="text" name="search" placeholder="Search.." style={{ borderRadius: 20, backgroundColor: ''}}/>
+                      <div class="dropdown">
+                        <button class="btn btn-success mx-4 my-sm-0  dropbtn newbtn" type="submit">NEW CHAT</button>
+                        <div class="dropdown-content my-5">
+                          <a href=""><input class="form-control mr-sm-2 text_box my-4 " type="text" placeholder="Friends Email..." /></a>
+                         
+                        </div>
+                      </div>
+                     <button className="btn btn-success my-2 my-sm-0 newbtn" type="submit">NEW GROUP</button>
                       </form>
-                  </SideNav>
-              </div>
+                      </div>
+
+                      <ul className="nav nav-navbar list-inline pt-0">
+                          <li className="list-inline-item my-4"><a  data-placement="bottom" data-toggle="tooltip" data-original-title="Profilename"><h5>Bright Mabuza</h5></a>
+                          </li>
+                          <li className="list-inline-item imgs"><a href="" data-placement="bottom" data-toggle="tooltip" data-original-title="Profilename"><img src={require("../header/Icon.png")} alt={"ChatterBox logo"} /></a>
+                          </li> 
+                          <li className="list-inline-item imgs"><a href="" data-placement="bottom" data-toggle="tooltip" data-original-title="Profilename"><img src={require("../header/Icon.png")} alt={"ChatterBox logo"} /></a>
+                          </li>        
+                      </ul>
+
+                    </div>
+                  </nav>
+                </div>
+                
+                  <div className="sidebar"> 
+                      <SideNav highlightColor='#E91E63' highlightBgColor='#00bcd4'>       
+                          <form className="form-inline my-2 my-lg-0">
+                          <input class="form-control mr-sm-2 text_box my-4" type="text" placeholder="Search" />
+                          </form>
+                      </SideNav>
+                  </div>
             </div>
 
              );
