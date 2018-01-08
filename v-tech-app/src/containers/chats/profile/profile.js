@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import './App.css';
+import './profile.css';
 
 class App extends Component {
   render() {
     return (
 	<div className="App">
 		<h1>Profile</h1>
+        <br/>
+        <img src={require("../profile/index.jpg")} alt={"ChatterBox logo"} class="img-circle" />
         <br />
         <div id="wrapper">
             <input className="my-4" id="Username" placeHolder="LUFFY.D MONKEY" icon=""/>
