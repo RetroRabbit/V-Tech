@@ -6,14 +6,13 @@ class App extends Component {
     return (
 	<div className="App">
 		<h1>Profile</h1>
-		    
-			
-			<img src={require("../profile/IMg.jpg")} alt={"ChatterBox logo"}  />
-			<br />
-			<input className="my-4" />
-			<br/>
-			<input className="my-4"/>
-			<br/>		
+        <br />
+        <div id="wrapper">
+            <input className="my-4" id="Username" placeHolder="LUFFY.D MONKEY" icon=""/>
+            <br/>
+            <input className="my-4" id="email" placeHolder="Luffy@gmail.com" icon=""/>
+            <br/>		
+        </div>	
 		<div className="done"> 		
 			<button class="btn btn-default">Done</button>
 		</div>	
