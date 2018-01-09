@@ -3,7 +3,7 @@ import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { ConnectedRouter } from 'react-router-redux'
 import store, { history } from './store'
-import App from './containers/chats/login'
+import AppChat from './containers/chats'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -15,7 +15,7 @@ render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
       <div class="main">
-        <App />
+        <AppChat />
       </div>
     </ConnectedRouter>
   </Provider>,
