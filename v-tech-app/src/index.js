@@ -14,6 +14,7 @@ import Lgn_one from './containers/lgn_one'
 import Lgn_two from './containers/lgn_two'
 import Lgn_three from './containers/lgn_three'
 import Home from './containers/login'
+import Profile from './containers/chats/profile'
 
 
 import './index.css'
@@ -25,12 +26,14 @@ render(
     <ConnectedRouter history={history}>
       <div class="main">
         
+        <App />
          
         <Route exact path="/" component={Home} />    
      <Route exact path="/register" component={Lgn_one} />
      <Route exact path="/register_two" component={Lgn_two} />
      <Route exact path="/register_three" component={Lgn_three} />
      <Route exact path="/chats" component={AppChat} />
+     <Route exact path="/profile" component={Profile} />
       </div>
     </ConnectedRouter>
   </Provider>,

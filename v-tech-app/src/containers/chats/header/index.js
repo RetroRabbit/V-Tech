@@ -30,7 +30,7 @@ export default class AppHeader extends React.Component {
                       <div className="navbar head_nav nav ">
                       <form className="form-inline my-2 my-lg-0">
                       <div class="dropdown">
-                        <button class="btn  dropbtn btn_new_chat" type="submit">NEW CHAT</button>
+                        <button class="btn dropbtn btn_new_chat" type="submit">NEW CHAT</button>
                         <div class="dropdown-content my-5">
                           <a href=""><input class="form-control mr-sm-2 text_box my-4" type="text" placeholder="Friends Email..." /></a>
                          
@@ -43,7 +43,7 @@ export default class AppHeader extends React.Component {
                       <div className="nav_row">
                           <div className="list-item my-4 dropdown">
                                   <a href="" className="dropbtn" data-placement="bottom" data-toggle="tooltip" data-original-title="Profilename"><h6 class="user">Bright Mabuza</h6></a>
-                                        <div class="dropdown-content my-5">
+                                        <div class="dropdown-content">
                                             <a href="">Settings</a>
                                             <a href="">Log Out</a>
                                         </div>
@@ -52,7 +52,7 @@ export default class AppHeader extends React.Component {
                                   <a href="" data-placement="bottom" data-toggle="tooltip" data-original-title="Profilename"><img class="img1_i" src={require("../header/Icon.png")} alt={"ChatterBox logo"} /></a>
                           </div>
                           <div className="img2">
-                          <a href="" data-placement="bottom" data-toggle="tooltip" data-original-title="Profilename"><img img class="img2_i" src={require("../header/Icon.png")} alt={"ChatterBox logo"} /></a>
+                          <div class="img_box"><Link to="/profile" ><img img class="img2_i" src={require("../profile/kitten.jpg")} alt={"ChatterBox logo"} ></img></Link></div>
                           </div>
                       </div>
                    
