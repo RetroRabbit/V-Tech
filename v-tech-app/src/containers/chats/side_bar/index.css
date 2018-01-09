@@ -1,6 +1,12 @@
-     div.sidebar{
-    box-shadow: 3px 5px 8px #666888;
-    width: auto;
-    height:100%;
-    background-color: #fefdfb;
+.side_bar{
+    box-shadow: 4px 0px 4px 0px lightgrey;
+    width: 350px;
+    margin-left: 153px;
    }
+
+.search{
+    background-color: white !important;
+    border: 1px solid grey !important;
+    color: black;
+    font-size: 10pt;
+}

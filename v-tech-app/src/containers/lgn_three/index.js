@@ -9,10 +9,10 @@ import { push } from 'react-router-redux'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
-import './new_chat.css'
+import './css_lgn3/new_chat.css'
 
 const Lgn_three = props => (
-
+<div class="contain">
     <div class="newc_form_area">
       <h4 id="stp_last">Last Step</h4>
       <h3 id="first_chat">YOUR FIRST CHAT</h3>
@@ -21,6 +21,7 @@ const Lgn_three = props => (
  
         <button id="new_chat_next" class="btn btn-primary" onClick={() => props.changePage()}>NEXT STEP</button>
             <Link to="/chats"><p class="new_chat_skip">Skip for now</p></Link>
+    </div>
     </div>
   )
   
