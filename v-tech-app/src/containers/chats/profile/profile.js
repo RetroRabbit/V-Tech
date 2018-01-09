@@ -1,23 +1,26 @@
 import React, { Component } from 'react';
-import './profile.css';
+import './App.css';
 
-class App extends Component {
+class App extends React.Component {
   render() {
     return (
 	<div className="App">
-		<h1>Profile</h1>
-        <br/>
-        <img src={require("../profile/index.jpg")} alt={"ChatterBox logo"} class="img-circle" />
-        <br />
-        <div id="wrapper">
-            <input className="my-4" id="Username" placeHolder="LUFFY.D MONKEY" icon=""/>
-            <br/>
-            <input className="my-4" id="email" placeHolder="Luffy@gmail.com" icon=""/>
-            <br/>		
-        </div>	
-		<div className="done"> 		
-			<button class="btn btn-default">Done</button>
-		</div>	
+	 <div class="form_area">
+		    <form>
+				<br/>
+				    <img src={require("../profile/index.jpg")} alt={"ChatterBox logo"} class="img-circle" />
+				<br/>
+				<br />
+				 <div class="col-xs-2">
+						<input className="" id="Username" placeHolder="LUFFY.D MONKEY" />
+						<br/>
+						<input className="" id="email" placeHolder="Luffy@gmail.com" /> 
+				</div>			
+				<div className="done"> 		
+					<button class="btn btn-default" ><span class="glyphicon glyphicon-pencil"></span>Done</button>
+				</div>	
+		    </form>
+	 </div>	
 	</div>	
 	);
 }
