@@ -1,46 +1,36 @@
-.App {
-    text-align: center;
-  }
-  
-  .img{
-      background-color:grey;
-      border-radius:2%;
-  } 
-  
-  .btn{
-      display: block;
-      margin: auto;
-      margin-top: 50px;
-      background-color: rgb(251, 105, 2);
-      width: 143px;
-      height: 54px;
-      border: none;
-      color:white;
-      
-  }
-  
-  .input {
-    border: none !important;
-    background-color: none !important;
-    outline: 0;
-    font-size: 25px;
-    width: 30%;
-    height: 30px;
-  }
-  
-  .wrapper{
-      border: none;
-      border-color: transparent;
-  }
-  
-  .form{
-      height:100
-  }
-  .form_area input {
-      display: block;
-      border: 0;
-      border-bottom:none;
-      width: 300px;
-      margin: auto;
-      margin-bottom: 10px;
-  }
+.form_area {
+    display: block;
+    border-radius: 8px;
+    margin: auto;
+    margin-top: 5%;
+    width: 380px;
+    height: 450px;
+   
+}
+
+.form_area input {
+    display: block;
+    border: none;
+    border-bottom: none;
+    width: auto;
+    margin: auto;
+    margin-bottom: 10px;
+	height:50px;
+	font-size:20px;
+}
+
+.btn{
+   
+    margin: auto;
+    margin-top: 50px;
+    background-color: rgb(251, 105, 2)!important;
+    width: 120px;
+    height: 40px;
+    border: none;
+	color:white;
+	text-align:center;
+}
+
+.glyphicon {
+    font-size: 35px;
+}
