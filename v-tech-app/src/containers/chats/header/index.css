@@ -136,8 +136,16 @@ body {
     width: 80px;
   }
   .img2_i{
-    height: 80px;
-    width: 80px;
+    height: 53px;
+    width: 53px;
+    border-radius: 100%;
+    margin-left: 20px;
+    margin:auto;
+  }
+  .img_box{
+    border-radius: 100%;
+    padding: 3px;
+    margin-top: 9px;
   }
   .img2{
     float: right;

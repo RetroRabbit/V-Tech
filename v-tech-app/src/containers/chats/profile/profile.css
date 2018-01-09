@@ -1,4 +1,4 @@
-.form_area {
+.profile_form_area {
     display: block;
     border-radius: 8px;
     margin: auto;
@@ -8,29 +8,52 @@
    
 }
 
-.form_area input {
+.profile_form_area input {
     display: block;
     border: none;
     border-bottom: none;
-    width: auto;
     margin: auto;
-    margin-bottom: 10px;
 	height:50px;
-	font-size:20px;
+    font-size:20px;
+    text-align: center;
+   
+}
+.prfl_username::-webkit-input-placeholder{
+    color: white;
+    font-weight: bold;
+    color:rgb(0,72,83);
+}
+.prfl_email::-webkit-input-placeholder{
+    color: white;
+    color:rgb(0,72,83);
 }
 
-.btn{
+.btn_submit{
    
     margin: auto;
-    margin-top: 50px;
     background-color: rgb(251, 105, 2)!important;
     width: 120px;
     height: 40px;
     border: none;
 	color:white;
-	text-align:center;
+    text-align:center;
+    
+}
+
+#prfl_login{
+    margin-top: 25px;
+    box-shadow: 1px 1px 8px 2px grey; 
+    
 }
 
 .glyphicon {
     font-size: 35px;
+}
+
+.user_pic{
+    border-radius: 100%;
+    height: 220px;
+    width: 220px;
+    box-shadow: 1px 1px 8px 2px grey; 
+    padding: 15px;
 }
