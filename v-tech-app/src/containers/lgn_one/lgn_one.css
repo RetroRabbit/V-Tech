@@ -1,0 +1,50 @@
+#stp_one {
+    text-align: center;
+    margin: 0;
+    padding-top: 40px;
+    color: white;
+}
+
+#basics  {
+    text-align: center; 
+    color: white;
+    margin-bottom: 50px;
+}
+
+.reg_form_area {
+    background: rgb(1, 185, 189);
+    display: block;
+    border-radius: 8px;
+    margin: auto;
+    margin-top: 5%;
+    width: 380px;
+    height: 500px;
+}
+
+.reg_field {
+    display: block;
+    border: 0;
+    border-bottom: 2px solid lightgrey;
+    width: 300px;
+    margin: auto;
+    margin-bottom: 25px;
+    background-color: rgb(1, 185, 189);
+    font-size: 11pt;
+}
+
+.reg_field::-webkit-input-placeholder{
+    color: white;
+}
+
+
+#reg_next{
+    display: block;
+    margin: auto;
+    margin-top: 70px;
+    background-color: rgb(13, 171, 175);
+    width: 120px;
+    height: 40px;
+    border: none;
+    box-shadow: 0.5px 1px 2px 1px rgba(0, 0, 0, 0.14);
+    color: white;
+}

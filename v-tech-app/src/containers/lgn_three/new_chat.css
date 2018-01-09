@@ -1,0 +1,54 @@
+.newc_form_area {
+    display: block;
+    background: rgb(1, 185, 189);
+    border-radius: 8px;
+    margin: auto;
+    margin-top: 5%;
+    width: 380px;
+    height: 500px;
+
+}
+
+#stp_last {
+    text-align: center;
+    margin: 0;
+    padding-top: 40px;
+    color: white;
+}
+#first_chat {
+    text-align: center; 
+    color: white;
+    margin-bottom: 50px;
+}
+
+.chat_email{
+    display: block;
+    border: 0;
+    border-bottom: 2px solid lightgrey;
+    width: 300px;
+    margin: auto;
+    margin-top: 110px;
+    background-color: rgb(1, 185, 189);
+    font-size: 11pt;
+}
+.chat_email::-webkit-input-placeholder{
+    color: white;
+}
+
+#new_chat_next{
+    display: block;
+    margin: auto;
+    margin-top: 149px;
+    background-color: rgb(13, 171, 175);
+    width: 120px;
+    height: 40px;
+    border: none;
+    box-shadow: 0.5px 1px 2px 1px rgba(0, 0, 0, 0.14);
+    color: white;
+}
+.new_chat_skip{
+    font-size: 12pt;
+    color: white;
+    margin-top: 10px;
+    text-align: center;
+}
