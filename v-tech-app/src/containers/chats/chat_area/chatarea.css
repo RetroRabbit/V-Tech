@@ -1,0 +1,30 @@
+.MessageArea {
+    background: white;
+}
+
+.WrittingArea {
+    background: white;
+}
+
+.text_box {
+    border-radius: 50px 50px 50px 50px !important;
+    border: none !important;
+    background-color: rgb(243, 243, 243) !important;
+    color: gray !important;
+  }
+  
+.attachmentbtn {
+    border-radius: 50px 50px 50px 50px !important;
+    border: none !important;
+    background-color: rgb(204, 204, 204) !important;
+    font-size: large !important;
+    color: gray !important;
+  }
+
+  .msg {
+    background: rgb(138, 138, 175);
+    border-radius: 10px 10px 10px 10px;
+    width: 30em;
+    word-wrap: break-word;
+    padding: 10px;
+  }
