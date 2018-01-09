@@ -28,7 +28,7 @@ function insertChat(who, text, time = 0){
                         '<div class="avatar"><img className="img-circle" style="width:20%;"  /></div>' +
                             '<div class="text text-l">' +
                                 '<p>'+ text +'</p>' +
-                                '<p><small>'+date+'</small></p>' +
+                                '<p><small><font color="white">'+date+'</font></small></p>' +
                             '</div>' +
                         '</div>' +
                     '</li>';                    
@@ -37,7 +37,7 @@ function insertChat(who, text, time = 0){
                         '<div class="msj-rta macro">' +
                             '<div class="text text-r">' +
                                 '<p>'+text+'</p>' +
-                                '<p><small>'+date+'</small></p>' +
+                                '<p><small><font color="white">'+date+'</font></small></p>' +
                             '</div>' +
                         '<div class="avatar" style="padding:0px 0px 0px 10px !important"><img class="img-circle" style="width:20%;" /></div>' +                                
                   '</li>';
@@ -85,11 +85,14 @@ export default class AppChatArea extends React.Component {
   }
   render() {
     return (
+
             <div className="col-lg-12 col-sm-3 col-sm-offset-4 frame">
                 <ul></ul>
                 <div>
-                    <div class="msj-rta macro" style={{margin:'auto'}}>                        
+                    <div class="msj-rta1 macro" style={{margin:'auto'}}>  
+                    <button type="button" class="btn attachmentbtn">+</button>                      
                         <div class="text text-r" style={{background: 'whitesmoke !important'}}>
+                        
                             <input class="mytext" id='mytext' onKeyPress={handleKeyPress} placeholder="Type a message"/>
                         </div> 
                     </div>

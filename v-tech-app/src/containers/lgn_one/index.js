@@ -12,7 +12,7 @@ import { connect } from 'react-redux'
 import './lgn_one.css'
 
 const Lgn_one = props => (
-
+  <div class="contain">
   <div class="reg_form_area">
     <h4 id="stp_one">Step One</h4>
     <h3 id="basics">THE BASICS</h3>
@@ -22,6 +22,7 @@ const Lgn_one = props => (
           <input type="password" class="form-control reg_field" id="pswd" placeholder="Password"></input>
          <button type="submit" id="reg_next" class="btn btn-primary" onClick={() => props.changePage()}>NEXT STEP</button>
         </form>
+  </div>
   </div>
 )
 

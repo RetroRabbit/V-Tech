@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom'
 import { push } from 'react-router-redux'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import './login.css'
+import './css_lgn/login.css'
 
 const Home = props => (
+  <div class="contain">
   <div class="lgn_form_area">
     <h3 class="lgn_welcome">Welcome to the</h3>
     <img src={require("../login/Full_Logo.png")} alt={"ChatterBox logo"} />
@@ -16,7 +17,7 @@ const Home = props => (
     </form>
     <Link to="/register"><p class="lgn_register">No account yet? Get setup now</p></Link>
 
-
+  </div>
   </div>
 )
 

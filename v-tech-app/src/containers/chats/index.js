@@ -4,6 +4,7 @@ import { Route, Link } from 'react-router-dom'
 import AppHeader from './header'
 import AppSideBar from './side_bar'
 import AppChatArea from './chat_area'
+import './css_chats/main_chat.css'
 
 export default class AppChat extends React.Component {
   constructor(props) {
@@ -21,6 +22,7 @@ export default class AppChat extends React.Component {
   }
   render() {
     return (
+      <div class="chats_contain">
             <div >
                     <div className="col-lg-12">
                             <AppHeader/>
@@ -34,7 +36,7 @@ export default class AppChat extends React.Component {
                         </div>
                     </div>      
             </div>
-
+      </div>
         );
     }
 }

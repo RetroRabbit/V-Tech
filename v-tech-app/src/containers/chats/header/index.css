@@ -2,11 +2,16 @@ body {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+
   }
-  * {
-    box-sizing: border-box;
-  }
+ 
   
+.header_main{
+  margin-top: 0;
+  width: 1250px;
+  margin: auto;
+}
+
   /* Style the search field */
   form.example input[type=text] {
     padding: 10px;
@@ -28,10 +33,7 @@ body {
     clear: both;
     display: table;
   }
-  
-  div.flex{
-    flex:1;
-   }
+
    
   .header{
    
@@ -39,12 +41,7 @@ body {
     color: #01B9BD;
     
   }
-   div.flex>form>button{
-    box-shadow: 3px 5px 8px #666888;
-    background-color: #01B9BD ;
-    color:white;
-    border: none;
-   }
+
    .imgs{
     height: 10px;
     margin-top: -13px;
@@ -58,14 +55,6 @@ body {
   }
   
   /* dropdown button Change color on hover */
-  .dropbtn {
-  
-    box-shadow: 3px 5px 8px #666888;
-    background-color: #01B9BD ;
-    color:white;
-    border: none;
-    cursor: pointer;
-  }
   
   .dropdown {
     position: relative;
@@ -127,9 +116,6 @@ body {
     display: table;
   }
   
-  div.flex{
-    flex:1;
-   }
    
   .header{
    
@@ -137,12 +123,6 @@ body {
     color: #01B9BD;
     
   }
-   div.flex>form>button{
-    box-shadow: 3px 5px 8px #666888;
-    background-color: #01B9BD ;
-    color:white;
-    border: none;
-   }
   
    div.sidebar{
     box-shadow: 3px 5px 8px #666888;
@@ -150,10 +130,30 @@ body {
     height:auto;
     background-color: #fefdfb;
    }
-   .imgs{
-    height: 10px;
-    margin-top: -13px;
-   }
+  
+  .img1_i{
+    height: 80px;
+    width: 80px;
+  }
+  .img2_i{
+    height: 80px;
+    width: 80px;
+  }
+  .img2{
+    float: right;
+    
+  }
+  .img1{
+    float: right;
+  }
+  .nav_row{
+    float: right;
+    height: 50px;
+    margin-left: 600px;
+  }
+  .head_nav{
+    float: right;
+  }
   
    .text_box {
     border-radius: 50px 50px 50px 50px !important;
@@ -163,14 +163,6 @@ body {
   }
   
   /* dropdown button Change color on hover */
-  .dropbtn {
-  
-    box-shadow: 3px 5px 8px #666888;
-    background-color: #01B9BD !important ;
-    color:white;
-    border: none !important;
-    cursor: pointer;
-  }
 
   
   .dropdown {
@@ -204,3 +196,36 @@ body {
   .dropdown:hover .dropbtn {
     background-color: #3e8e41;
   }
+
+  .btn_new_chat{
+    background-color: rgb(13, 171, 175);
+    width: 130px;
+    height: 48px;
+    border: none;
+    box-shadow: 0.5px 1px 2px 1px rgba(0, 0, 0, 0.14);
+    color: white;
+    margin-top: 5px;
+    font-size: 11pt;
+    
+  }
+  .btn_new_group{
+    background-color: rgb(13, 171, 175);
+    width: 130px;
+    height: 48px;
+    border: none;
+    box-shadow: 0.5px 1px 2px 1px rgba(0, 0, 0, 0.14);
+    color: white;
+    margin-top: 5px;
+    margin-left: 20px;
+    text-align: center;
+    font-size: 11pt;
+  }
+
+.user{
+  color: white;
+  margin-top: 5px;
+}
+
+.search{
+  margin-left: 20px;
+}

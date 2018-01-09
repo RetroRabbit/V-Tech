@@ -20,15 +20,17 @@ export default class AppSideBar extends React.Component {
   }
   render() {
     return (
-            <div >
-                  <div className="sidebar"> 
-                      <SideNav highlightColor='#E91E63' highlightBgColor='#00bcd4'>       
-                          <form className="form-inline my-2 my-lg-0">
-                          <input class="form-control mr-sm-2 text_box my-4" type="text" placeholder="Search" />
-                          </form>
-                      </SideNav>
+                <div class="side_bar"> 
+                  <div class="search_bar">
+                    <SideNav >       
+                        <form className="form-inline side_section">
+                          <input class="form-control mr-sm-2 text_box search my-4" type="text" placeholder="Search Chats" />
+                        </form>
+                    </SideNav>
+            
                   </div>
-            </div>
+                </div>
+                
 
              );
   }

@@ -39,11 +39,17 @@
 }
 .msj-rta{
     float:right;
+    background:rgb(0,72,83);
+    color: white;
+}
+.msj-rta1{
+    float:right;
     background:whitesmoke;
 }
 .msj{
     float:left;
-    background:white;
+    background:rgb(1, 185, 189);
+    color: white;
 }
 .frame{
     background:#fefdfb;
@@ -93,5 +99,14 @@ ul {
 input:focus{
     outline: none;
 } 
+.attachmentbtn {
+    border-radius: 50px 50px 50px 50px !important;
+    border: none !important;
+    background-color: rgb(204, 204, 204) !important;
+    font-size: large !important;
+    color: gray !important;
+    font-size: 20px !important;
+    font-weight: bold !important;
+  }
 
   
