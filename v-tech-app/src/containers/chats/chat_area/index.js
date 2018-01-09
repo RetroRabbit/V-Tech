@@ -1,56 +1,101 @@
-import React, { Component } from 'react'
-//import { Route, Link } from 'react-router-dom'
-import { Row, Col, Form, FormGroup, Input, Button, Container } from 'reactstrap'
 
-import './chatarea.css'
+import React from 'react';
+// eslint-disable-next-line
+import { Route, Link } from 'react-router-dom'
+import $ from 'jquery'
+import './index.css';
 
-const App = () => (  
-    <div>
-        <ChatArea/>
-        <MessageArea/> 
-    </div>
+function formatAMPM(date) {
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0'+minutes : minutes;
+    var strTime = hours + ':' + minutes + ' ' + ampm;
+    return strTime;
+}            
 
-)
+//-- No use time. It is a javaScript effect.
+function insertChat(who, text, time = 0){
+    var control = "";
+    var date = formatAMPM(new Date());
+    
+    if (who === "me"){
+        
+        control = '<li style="width:90%">' +
+                        '<div class="msj macro">' +
+                        '<div class="avatar"><img className="img-circle" style="width:20%;"  /></div>' +
+                            '<div class="text text-l">' +
+                                '<p>'+ text +'</p>' +
+                                '<p><small>'+date+'</small></p>' +
+                            '</div>' +
+                        '</div>' +
+                    '</li>';                    
+    }else{
+        control = '<li style="width:90%;">' +
+                        '<div class="msj-rta macro">' +
+                            '<div class="text text-r">' +
+                                '<p>'+text+'</p>' +
+                                '<p><small>'+date+'</small></p>' +
+                            '</div>' +
+                        '<div class="avatar" style="padding:0px 0px 0px 10px !important"><img class="img-circle" style="width:20%;" /></div>' +                                
+                  '</li>';
+                }
+                setTimeout(
+                    function(){                        
+                        $("ul").append(control);
+            
+                    }, time);
+                
+            }
+// eslint-disable-next-line 
+            function resetChat(){
+                $("ul").empty();
+            }
 
-class MessageArea extends Component {
-    render() {
-        return (
-            <div className="WrittingArea">
-                <Container>
-                    <Row>
-                        <Col sm="12" md={{ size: 8 }}>
-                            <Form>
-                                <Button className="attachmentbtn my-2" size="lg">+</Button>
-                                    <FormGroup>
-                                        <Input type="text" name="message" id="exampleMsg" placeholder="Your message here" className="text_box"/>
-                                    </FormGroup>
-                            </Form>
-                        </Col>
-                    </Row>
-                </Container>
+            
+            const handleKeyPress = (event) => {
+              if(event.key ==='Enter'){
+                var text2 = document.getElementById('mytext').value;
+                if(text2 === "lol"){
+                      insertChat("you", text2);
+                      document.getElementById('mytext').value = " ";          
+                     } else{
+                      insertChat("me", text2);
+                      
+                      document.getElementById('mytext').value = '';
+                     }                    
+                }
+            }
+
+export default class AppChatArea extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      isOpen: false
+    };
+  }
+  toggle() {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  }
+  render() {
+    return (
+            <div className="col-lg-12 col-sm-3 col-sm-offset-4 frame">
+                <ul></ul>
+                <div>
+                    <div class="msj-rta macro" style={{margin:'auto'}}>                        
+                        <div class="text text-r" style={{background: 'whitesmoke !important'}}>
+                            <input class="mytext" id='mytext' onKeyPress={handleKeyPress} placeholder="Type a message"/>
+                        </div> 
+                    </div>
+                </div>         
             </div>
+
         );
     }
 }
-
-class ChatArea extends Component {
-    render() {
-        return (
-            <div className="MessageArea">
-            <Container>
-                <Row>
-                    <Col xs="6">
-                        <Row>
-                            <p class="msg">
-                                Hello
-                            </p>
-                        </Row>
-                        <Row>13:05</Row>
-                    </Col>
-                </Row>
-            </Container>
-            </div> 
-        )
-    }
-}
-export default App

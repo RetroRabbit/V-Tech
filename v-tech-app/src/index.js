@@ -5,7 +5,6 @@ import { ConnectedRouter } from 'react-router-redux'
 //import Route from 'react-router-dom'
 import { Route} from 'react-router-dom'
 import store, { history } from './store'
-import App from './containers/chats/chat_area'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -22,6 +21,7 @@ render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
       <div class="main">
+
       <Route exact path="/" component={Home} />
       <Route exact path="/register" component={Lgn_one} />
       <Route exact path="/register_two" component={Lgn_two} />
