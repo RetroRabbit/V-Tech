@@ -3,7 +3,7 @@ import { routerMiddleware } from 'react-router-redux'
 import thunk from 'redux-thunk'
 import createHistory from 'history/createBrowserHistory'
 import rootReducer from './modules'
-import allReducers from './reducers'
+//import allReducers from './reducers'
 
 export const history = createHistory()
 
@@ -31,7 +31,7 @@ const store = createStore(
   rootReducer,
   initialState,
   composedEnhancers, 
-  allReducers
+  //allReducers
 )
 
 export default store

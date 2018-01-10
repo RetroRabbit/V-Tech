@@ -6,6 +6,21 @@ import './index.css'
 import { connect } from 'react-redux';
 
 class AppSideBar extends React.Component {
+
+  createChatListItems() {
+    return this.props.chats.map((chat) => {
+      return(
+         
+        <div class="chat">
+        
+          <h5 class="chat_friend_name"><img class="chat_user_pic" src={require("../profile/kitten.jpg")} alt={"Profile Pic"} ></img>Dummy Name</h5>
+          <div class="lst_msg"><span key={chat.id} >{chat.last_message}</span>
+          </div>
+        </div>
+      );
+    });
+  }
+
   constructor(props) {
     super(props);
 
@@ -40,7 +55,7 @@ class AppSideBar extends React.Component {
                         </div>
                       </div>
                       <div class="chat">
-                        <h5 class="chat_friend_name"><img class="chat_user_pic" src={require("../profile/kitten.jpg")} alt={"Profile Pic"} ></img>Donald Bridle</h5>
+                        <h5 class="chat_friend_name"><img class="chat_user_pic" src={require("../profile/kitten.jpg")} alt={"Profile Pic"}></img>Donald Bridle</h5>
                         <div class="lst_msg"><span>Is there still meat in the fridge?</span>
                         </div>
                       </div>
@@ -49,6 +64,8 @@ class AppSideBar extends React.Component {
                         <div class="lst_msg"><span>Blah blah blah blah blah blah blah blah</span>
                         </div>
                       </div>
+
+                      {this.createChatListItems()}
                       
                   </div>
                 </div>     

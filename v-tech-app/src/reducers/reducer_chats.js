@@ -2,7 +2,7 @@ export default function () {
     return [
         {
         id: 1,
-        last_message: "Hey, are free tomorrow evening? Was wondering if you'd be willing to teach me to cook...no ulterior motive 0_0 hehe"
+        last_message: "Hey, are you free tomorrow evening? Was wondering if you'd be willing to teach me to cook...no ulterior motive 0_0 hehe"
         },
         {
             id: 2,
