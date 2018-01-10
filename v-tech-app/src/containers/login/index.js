@@ -7,9 +7,9 @@ import './css_lgn/login.css'
 import {login_successful, login_unsuccessful} from '../../modules/loginreducer'
 
 class Home extends Component {
+
   constructor(props) {
     super(props);
-    console.log(props);
     this.state = {email:"",password:""};
     this.checkDetails = this.checkDetails.bind(this);
     this.updateInputEmail = this.updateInputEmail.bind(this);
@@ -34,11 +34,13 @@ class Home extends Component {
   }
 
   checkDetails() {
-    if (this.state.email === "me@admin" && this.state.password === "admin") {
-      this.props.login_successful();
-      this.props.changePage();
-    } else {
-      this.props.login_unsuccessful();
+    for (var i=0;i<this.props.users.length;i++) {
+      if (this.state.email === this.props.users[i].email && this.state.password === this.props.users[i].password) {
+        this.props.login_successful();
+        this.props.changePage();
+      } else {
+        this.props.login_unsuccessful();
+      }
     }
     this.setState({
       email: '',
@@ -61,6 +63,7 @@ class Home extends Component {
 }
 
 const mapStateToProps = state => ({
+  users: state.users,
   isLogInPending: state.loginreducer.isLogInPending,
   isLogInSucess: state.loginreducer.isLogInSucess,
   isLogInFail: state.loginreducer.isLogInFail
