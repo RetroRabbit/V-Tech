@@ -3,8 +3,9 @@ import React from 'react';
 import { Route, Link } from 'react-router-dom'
 import SideNav from 'react-sidenav';
 import './index.css'
+import { connect } from 'react-redux';
 
-export default class AppSideBar extends React.Component {
+class AppSideBar extends React.Component {
   constructor(props) {
     super(props);
 
@@ -20,18 +21,48 @@ export default class AppSideBar extends React.Component {
   }
   render() {
     return (
+      <div class="container">
+        <div class="row">
                 <div class="side_bar"> 
                   <div class="search_bar">
                     <SideNav >       
-                        <form className="form-inline side_section">
+                        <form className="form-inline">
                           <input class="form-control mr-sm-2 text_box search my-4" type="text" placeholder="Search Chats" />
                         </form>
                     </SideNav>
-            
                   </div>
-                </div>
-                
 
+                  <div class="open_chats">
+                      <div class="chat">
+                        <h5 class="chat_friend_name"><img class="chat_user_pic" src={require("../profile/kitten.jpg")} alt={"Profile Pic"} ></img>Shingai Pedzisayi</h5>
+                        <div class="lst_msg"><span>Hey, are free tomorrow evening? Was wondering if you'd be willing to teach me to cook...
+                          no ulterior motive 0_0'...hehe</span>
+                        </div>
+                      </div>
+                      <div class="chat">
+                        <h5 class="chat_friend_name"><img class="chat_user_pic" src={require("../profile/kitten.jpg")} alt={"Profile Pic"} ></img>Donald Bridle</h5>
+                        <div class="lst_msg"><span>Is there still meat in the fridge?</span>
+                        </div>
+                      </div>
+                      <div class="chat">
+                        <h5 class="chat_friend_name"><img class="chat_user_pic" src={require("../profile/kitten.jpg")} alt={"Profile Pic"} ></img>John Snow</h5>
+                        <div class="lst_msg"><span>Blah blah blah blah blah blah blah blah</span>
+                        </div>
+                      </div>
+                      
+                  </div>
+                </div>     
+          </div>
+        </div>
              );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    chats: state.chats, 
+   users: state.users
+  };
+}
+
+export default connect(mapStateToProps)(AppSideBar);

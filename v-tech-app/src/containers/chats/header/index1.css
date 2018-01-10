@@ -1,0 +1,241 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+
+  }
+ 
+  
+.header_main{
+  margin-top: 0;
+  width: 1250px;
+  margin: auto;
+}
+
+  /* Style the search field */
+  form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+  }
+  
+  
+  form.example button:hover {
+    background: #0b7dda;
+  }
+  
+  /* Clear floats */
+  form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+   
+.header{  
+  background-color: #01B9BD !important;
+  color: #01B9BD;
+}
+
+.imgs{
+  height: 10px;
+  margin-top: -13px;
+}
+  
+   .text_box {
+    border-radius: 50px 50px 50px 50px !important;
+    border: none !important;
+    background-color: rgb(243, 243, 243) !important;
+    color: gray !important;
+  }
+  
+  /* dropdown button Change color on hover */
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    margin-left: -34px;
+    background-color: #f9f9f9;
+    width: 300px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    text-decoration: none;
+  
+  }
+  
+  .dropdown-content a:hover {background-color: #f1f1f1}
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+  }body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  
+  /* Style the search field */
+  form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+  }
+  
+  
+  form.example button:hover {
+    background: #0b7dda;
+  }
+  
+  /* Clear floats */
+  form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+   
+  .header{
+   
+    background-color: #01B9BD !important;
+    color: #01B9BD;
+    
+  }
+  
+   div.sidebar{
+    box-shadow: 3px 5px 8px #666888;
+    width: 300px;
+    height:auto;
+    background-color: #fefdfb;
+   }
+  
+  .img1_i{
+    height: 80px;
+    width: 80px;
+  }
+  .img2_i{
+    height: 54px;
+    width: 54px;
+    border-radius: 100%;
+    margin:auto;
+    margin-left: 30px;
+    margin-top: 12px;
+    background-color: white;
+    padding: 3px;
+  }
+
+  .img2{
+    float: right;
+    
+  }
+  .img1{
+    float: right;
+  }
+  .nav_row{
+    float: right;
+    height: 50px;
+    margin-left: 600px;
+  }
+  .head_nav{
+    float: right;
+  }
+  
+   .text_box {
+    border-radius: 50px 50px 50px 50px !important;
+    border: none !important;
+    background-color: rgb(243, 243, 243) !important;
+    color: gray !important;
+  }
+  
+  /* dropdown button Change color on hover */
+
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    margin-left: -34px;
+    background-color: #f9f9f9;
+    width: 300px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    text-decoration: none;
+   display: block;
+  
+  }
+  
+  .dropdown-content a:hover {background-color: #f1f1f1}
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+  }
+
+  .btn_new_chat{
+    background-color: rgb(13, 171, 175);
+    width: 130px;
+    height: 48px;
+    border: none;
+    box-shadow: 0.5px 1px 2px 1px rgba(0, 0, 0, 0.14);
+    color: white;
+    margin-top: 5px;
+    font-size: 11pt;
+    
+  }
+  .btn_new_group{
+    background-color: rgb(13, 171, 175);
+    width: 130px;
+    height: 48px;
+    border: none;
+    box-shadow: 0.5px 1px 2px 1px rgba(0, 0, 0, 0.14);
+    color: white;
+    margin-top: 5px;
+    margin-left: 20px;
+    text-align: center;
+    font-size: 11pt;
+  }
+
+.user{
+  color: white;
+  margin-top: 5px;
+}
+
+.search{
+  margin-left: 20px;
+}
+
+.header_div{
+  height: 55px;
+  background-color: #01B9BD;
+}

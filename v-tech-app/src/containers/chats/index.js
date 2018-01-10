@@ -22,19 +22,21 @@ export default class AppChat extends React.Component {
   }
   render() {
     return (
-      <div class="chats_contain">
-            <div >
-                    <div className="col-lg-12">
-                            <AppHeader/>
+      <div class="chats_contain container">
+            <div class="row">
+
+                <div className="col-lg-12">
+                        <AppHeader/>
+                </div>
+
+                <div className="row">
+                    <div className="col-lg-4 px-1">
+                        <AppSideBar/>
                     </div>
-                    <div className="row">
-                        <div className="col-lg-4 px-1">
-                            <AppSideBar/>
-                        </div>
-                        <div className="col-lg-8 ">
-                            <AppChatArea/>
-                        </div>
-                    </div>      
+                    <div className="col-lg-8 ">
+                        <AppChatArea/>
+                    </div>
+                </div>      
             </div>
       </div>
         );
