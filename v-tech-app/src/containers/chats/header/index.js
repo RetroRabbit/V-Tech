@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import {Offline} from '../../../reducers/userreducer'
+import {Offline} from '../../../reducers/userregisterreducer'
 import { Link } from 'react-router-dom'
 import './index.css'
 
@@ -67,9 +67,8 @@ class AppHeader extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  users: state.users,
-  name: state.userreducer.name,
-  email: state.userreducer.email,
+  name: state.userregisterreducer.name,
+  email: state.userregisterreducer.email,
   isLogInPending: state.loginreducer.isLogInPending,
   isLogInSucess: state.loginreducer.isLogInSucess,
   isLogInFail: state.loginreducer.isLogInFail

@@ -1,5 +1,6 @@
-import React from 'react';
-import './profile.css';
+import React from 'react'
+import { connect } from 'react-redux'
+import './profile.css'
 import AppHeader from '../header'
 
 
@@ -18,7 +19,7 @@ class Profile extends React.Component {
         <form>
           <div className="row">
 					<div className="col">
-						<input className="prfl_username" id="Username" placeHolder="LUFFY.D MONKEY" />
+						<input className="prfl_username" id="Username" placeHolder={this.props.name} />
 				
 
 					</div>
@@ -26,7 +27,7 @@ class Profile extends React.Component {
 		
 		<div className="row">	
 					<div className="col">
-						<input className="prfl_email" id="email" placeHolder="Luffy@gmail.com" />
+						<input className="prfl_email" id="email" placeHolder={this.props.email} />
 					</div>
 				
 		</div>	
@@ -42,5 +43,12 @@ class Profile extends React.Component {
 	);
 }
 }
+const mapStateToProps = state => ({
+  name: state.userregisterreducer.name,
+  email: state.userregisterreducer.email,
+})
 
-export default Profile;
+export default connect(
+  mapStateToProps, 
+  null
+)(Profile)
