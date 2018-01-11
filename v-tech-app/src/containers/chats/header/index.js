@@ -42,7 +42,7 @@ class AppHeader extends React.Component {
 
                       <div className="nav_row">
                           <div className="list-item my-4 dropdown">
-                                  <a href="" className="dropbtn" data-placement="bottom" data-toggle="tooltip" data-original-title="Profilename"><h6 class="user">{this.props.name}   </h6></a>
+                                  <a className="dropbtn" data-placement="bottom" data-toggle="tooltip" data-original-title="Profilename"><h6 class="user">{this.props.name}   </h6></a>
                                         <div class="dropdown-content">
                                             <Link to="/profile" >Settings</Link>
                                             <Link to="/" onClick={Offline()}>Log Out</Link>
