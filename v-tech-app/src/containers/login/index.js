@@ -4,6 +4,7 @@ import { push } from 'react-router-redux'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import './css_lgn/login.css'
+import {Online} from '../../reducers/userreducer'
 import {login_successful, login_unsuccessful} from '../../modules/loginreducer'
 
 class Home extends Component {
@@ -36,6 +37,7 @@ class Home extends Component {
   checkDetails() {
     for (var i=0;i<this.props.users.length;i++) {
       if (this.state.email === this.props.users[i].email && this.state.password === this.props.users[i].password) {
+        this.props.Online(this.props.users[i].name,this.props.users[i].email);
         this.props.login_successful();
         this.props.changePage();
       } else {
@@ -64,12 +66,15 @@ class Home extends Component {
 
 const mapStateToProps = state => ({
   users: state.users,
+  name: state.userreducer.name,
+  email: state.userreducer.email,
   isLogInPending: state.loginreducer.isLogInPending,
   isLogInSucess: state.loginreducer.isLogInSucess,
   isLogInFail: state.loginreducer.isLogInFail
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({
+  Online,
   login_successful,
   login_unsuccessful,
   changePage: () => push('/chats')
