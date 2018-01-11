@@ -1,12 +1,12 @@
 import React from 'react';
-// eslint-disable-next-line
-import { Route, Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+import {Offline} from '../../../reducers/userreducer'
+import { Link } from 'react-router-dom'
 import './index.css'
 
-export default class AppHeader extends React.Component {
+class AppHeader extends React.Component {
   constructor(props) {
     super(props);
-
     this.toggle = this.toggle.bind(this);
     this.state = {
       isOpen: false
@@ -20,6 +20,7 @@ export default class AppHeader extends React.Component {
   render() {
     return (
 
+<<<<<<< HEAD
       <div class="container menu_bar">
         <div class="row ">
 
@@ -37,6 +38,24 @@ export default class AppHeader extends React.Component {
                     <div class="dropdown-content drp_box">
                       
                     <input type="text" class="form-control srchFrnd_field" id="friend_email" placeholder="Friend's Email"></input>
+=======
+                      <div className="nav_row">
+                          <div className="list-item my-4 dropdown">
+                                  <a className="dropbtn" data-placement="bottom" data-toggle="tooltip" data-original-title="Profilename"><h6 class="user">{this.props.name}   </h6></a>
+                                        <div class="dropdown-content">
+                                            <Link to="/profile" >Settings</Link>
+                                            <Link to="/" onClick={Offline()}>Log Out</Link>
+                                        </div>
+                          </div>
+                          <div className="img1">
+                                  <a href="" data-placement="bottom" data-toggle="tooltip" data-original-title="Profilename"><img class="img1_i" src={require("../header/Icon.png")} alt={"ChatterBox logo"} /></a>
+                          </div>
+                          <div className="img2">
+                          <div class="img_box"><Link to="/profile" ><img img class="img2_i" src={require("../profile/kitten.jpg")} alt={"ChatterBox logo"} ></img></Link></div>
+                          </div>
+                      </div>
+                   
+>>>>>>> debaf9030a9dfe42e12c3a263748069a1db4b2fd
                       
                     </div>
                   </div>
@@ -65,3 +84,17 @@ export default class AppHeader extends React.Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+  users: state.users,
+  name: state.userreducer.name,
+  email: state.userreducer.email,
+  isLogInPending: state.loginreducer.isLogInPending,
+  isLogInSucess: state.loginreducer.isLogInSucess,
+  isLogInFail: state.loginreducer.isLogInFail
+})
+
+export default connect(
+  mapStateToProps, 
+  null
+)(AppHeader)
