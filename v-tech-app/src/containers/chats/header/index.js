@@ -20,7 +20,7 @@ class AppHeader extends React.Component {
   render() {
     return (
 
-<<<<<<< HEAD
+
       <div class="container menu_bar">
         <div class="row ">
 
@@ -38,7 +38,7 @@ class AppHeader extends React.Component {
                     <div class="dropdown-content drp_box">
                       
                     <input type="text" class="form-control srchFrnd_field" id="friend_email" placeholder="Friend's Email"></input>
-=======
+
                       <div className="nav_row">
                           <div className="list-item my-4 dropdown">
                                   <a className="dropbtn" data-placement="bottom" data-toggle="tooltip" data-original-title="Profilename"><h6 class="user">{this.props.name}   </h6></a>
@@ -54,8 +54,7 @@ class AppHeader extends React.Component {
                           <div class="img_box"><Link to="/profile" ><img img class="img2_i" src={require("../profile/kitten.jpg")} alt={"ChatterBox logo"} ></img></Link></div>
                           </div>
                       </div>
-                   
->>>>>>> debaf9030a9dfe42e12c3a263748069a1db4b2fd
+
                       
                     </div>
                   </div>
