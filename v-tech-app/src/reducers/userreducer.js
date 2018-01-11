@@ -15,7 +15,11 @@ export default (state = initialState,action) => {
                 email: action.useremail
             }
         case OFFLINE:
-            return state
+            return {
+                ...state,
+                name: action.username,
+                email: action.useremail
+            }
         default:
             return state
     }
@@ -31,3 +35,12 @@ export function Online(name,email){
     }
 }
 
+export function Offline(){
+    return dispatch => {
+        dispatch({
+            type: ONLINE,
+            username: "",
+            useremail: ""
+        })
+    }
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
+import {Offline} from '../../../reducers/userreducer'
 import { Link } from 'react-router-dom'
 import './index.css'
 
@@ -41,10 +42,10 @@ class AppHeader extends React.Component {
 
                       <div className="nav_row">
                           <div className="list-item my-4 dropdown">
-                                  <a href="" className="dropbtn" data-placement="bottom" data-toggle="tooltip" data-original-title="Profilename"><h6 class="user">{this.props.name}</h6></a>
+                                  <a href="" className="dropbtn" data-placement="bottom" data-toggle="tooltip" data-original-title="Profilename"><h6 class="user">{this.props.name}   </h6></a>
                                         <div class="dropdown-content">
-                                            <a href="">Settings</a>
-                                            <a href="">Log Out</a>
+                                            <Link to="/profile" >Settings</Link>
+                                            <Link to="/" onClick={Offline()}>Log Out</Link>
                                         </div>
                           </div>
                           <div className="img1">
