@@ -1,9 +1,9 @@
 export default function () {
     return [
         {
-            id: 1,
-            name: "Shingai Pedzisayi",
-            email: "jpshingi@gmail.com"
+        id: 1,
+        name: "Shingai Pedzisayi",
+        email: "jpshingi@gmail.com"
         },
         {
             id: 2,

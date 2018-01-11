@@ -2,9 +2,13 @@
 import React from 'react';
 // eslint-disable-next-line
 import { Route, Link } from 'react-router-dom'
-import $ from 'jquery'
+//import $ from 'jquery'
 import './index.css';
+//import { connect } from 'react-redux';
 
+
+
+/*
 function formatAMPM(date) {
     var hours = date.getHours();
     var minutes = date.getMinutes();
@@ -15,12 +19,15 @@ function formatAMPM(date) {
     var strTime = hours + ':' + minutes + ' ' + ampm;
     return strTime;
 }            
+*/
+
+
 
 //-- No use time. It is a javaScript effect.
-function insertChat(who, text, time = 0){
-    var control = "";
-    var date = formatAMPM(new Date());
-    
+
+
+
+    /*
     if (who === "me"){
         
         control = '<li style="width:90%">' +
@@ -49,25 +56,20 @@ function insertChat(who, text, time = 0){
                     }, time);
                 
             }
+            */
 // eslint-disable-next-line 
-            function resetChat(){
-                $("ul").empty();
-            }
 
-            
-            const handleKeyPress = (event) => {
-              if(event.key ==='Enter'){
-                var text2 = document.getElementById('mytext').value;
-                if(text2 === "lol"){
-                      insertChat("you", text2);
-                      document.getElementById('mytext').value = " ";          
-                     } else{
-                      insertChat("me", text2);
-                      
-                      document.getElementById('mytext').value = '';
-                     }                    
-                }
-            }
+
+const handleKeyPress = (event) => {
+    if(event.key ==='Enter'){
+    var text2 = document.getElementById('mytext').value;
+    
+        alert(text2)
+    }
+}
+
+
+
 
 export default class AppChatArea extends React.Component {
   constructor(props) {
@@ -84,21 +86,27 @@ export default class AppChatArea extends React.Component {
     });
   }
   render() {
-    return (
+    var myDiv = document.getElementsByClassName("msgs");
+    myDiv.scrollTop = myDiv.scrollHeight;
 
-            <div className="col-lg-12 col-sm-3 col-sm-offset-4 frame">
-                <ul></ul>
-                <div>
-                    <div class="msj-rta1 macro" style={{margin:'auto'}}>  
-                    <button type="button" class="btn attachmentbtn">+</button>                      
-                        <div class="text text-r" style={{background: 'whitesmoke !important'}}>
-                        
-                            <input class="mytext" id='mytext' onKeyPress={handleKeyPress} placeholder="Type a message"/>
-                        </div> 
-                    </div>
-                </div>         
+    return (
+        <div>
+            <div className="col-lg-12  frame test">
+                <ul class="msgs">
+
+                </ul>
+        
             </div>
 
+            <div class="msj-rta1 macro msg_input">
+                <button type="button" class="btn attachmentbtn">+</button>                      
+                <div class="text text-r" style={{background: 'whitesmoke !important'}}>
+
+                    <input class="mytext" id='mytext' onKeyPress={handleKeyPress} placeholder="Type a message"/>
+                </div> 
+            </div>
+        </div>
         );
     }
 }
+
