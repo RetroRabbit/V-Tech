@@ -1,12 +1,11 @@
 import React from 'react';
-// eslint-disable-next-line
-import { Route, Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 import './index.css'
 
-export default class AppHeader extends React.Component {
+class AppHeader extends React.Component {
   constructor(props) {
     super(props);
-
     this.toggle = this.toggle.bind(this);
     this.state = {
       isOpen: false
@@ -42,7 +41,7 @@ export default class AppHeader extends React.Component {
 
                       <div className="nav_row">
                           <div className="list-item my-4 dropdown">
-                                  <a href="" className="dropbtn" data-placement="bottom" data-toggle="tooltip" data-original-title="Profilename"><h6 class="user">Bright Mabuza</h6></a>
+                                  <a href="" className="dropbtn" data-placement="bottom" data-toggle="tooltip" data-original-title="Profilename"><h6 class="user">{this.props.name}</h6></a>
                                         <div class="dropdown-content">
                                             <a href="">Settings</a>
                                             <a href="">Log Out</a>
@@ -65,3 +64,17 @@ export default class AppHeader extends React.Component {
              );
   }
 }
+
+const mapStateToProps = state => ({
+  users: state.users,
+  name: state.userreducer.name,
+  email: state.userreducer.email,
+  isLogInPending: state.loginreducer.isLogInPending,
+  isLogInSucess: state.loginreducer.isLogInSucess,
+  isLogInFail: state.loginreducer.isLogInFail
+})
+
+export default connect(
+  mapStateToProps, 
+  null
+)(AppHeader)
