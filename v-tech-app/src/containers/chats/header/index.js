@@ -49,7 +49,7 @@ class AppHeader extends React.Component {
                                         </div>
                           </div>
                           <div className="img1">
-                                  <a href="" data-placement="bottom" data-toggle="tooltip" data-original-title="Profilename"><img class="img1_i" src={require("../header/Icon.png")} alt={"ChatterBox logo"} /></a>
+                                  <a data-placement="bottom" data-toggle="tooltip" data-original-title="Profilename"><img class="img1_i" src={require("../header/Icon.png")} alt={"ChatterBox logo"} /></a>
                           </div>
                           <div className="img2">
                           <div class="img_box"><Link to="/profile" ><img img class="img2_i" src={require("../profile/kitten.jpg")} alt={"ChatterBox logo"} ></img></Link></div>
@@ -68,6 +68,7 @@ class AppHeader extends React.Component {
 
 const mapStateToProps = state => ({
   name: state.userregisterreducer.name,
+  imageurl: state.userregisterreducer.imageurl,
   email: state.userregisterreducer.email,
   isLogInPending: state.loginreducer.isLogInPending,
   isLogInSucess: state.loginreducer.isLogInSucess,

@@ -4,7 +4,7 @@ import { push } from 'react-router-redux'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import './css_lgn/login.css'
-import {Online} from '../../reducers/userregisterreducer'
+import {Online, ChangeDp} from '../../reducers/userregisterreducer'
 import {login_successful, login_unsuccessful} from '../../reducers/loginreducer'
 
 class Home extends Component {
@@ -36,6 +36,7 @@ class Home extends Component {
 
   checkDetails() {
         this.props.Online(this.state.email,this.state.password);
+        this.props.ChangeDp("../containers/chats/profile/kitten.jpg");
         this.props.login_successful();
         this.props.changePage();
   }
@@ -64,6 +65,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   Online,
+  ChangeDp,
   login_successful,
   login_unsuccessful,
   changePage: () => push('/chats')

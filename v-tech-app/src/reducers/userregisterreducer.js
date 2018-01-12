@@ -1,5 +1,6 @@
 export const REGISTERED = 'userregisterreducer/REGISTERED'
 export const CHANGEDP = 'userregisterreducer/CHANGEDP'
+export const PICTURE = '../containers/chats/profile/kitten.jpg'
 export const FRIENDMAIL = 'userregisterreducer/FRIENDMAIL'
 export const ONLINE = 'userregisterreducer/ONLINE'
 export const OFFLINE = 'userregisterreducer/OFFLINE'
@@ -8,7 +9,7 @@ const initialState = {
     name: "",
     email: "",
     password: "",
-    imageurl: "",
+    imageurl: PICTURE,
     friendmail: ""
     
 }
@@ -24,6 +25,7 @@ export default (state = initialState,action) => {
                 password: action.userpassword
             }
         case CHANGEDP:
+        console.log("Comes to CHANGEDP reducer");
             return {
                 ...state,
                 imageurl: action.userimageurl
@@ -34,6 +36,7 @@ export default (state = initialState,action) => {
                 friendmail: action.userfriendmail
             }
         case ONLINE:
+        console.log("Comes to ONLINE reducer");
             return {
                 ...state,
                 email: action.useremail,
@@ -65,6 +68,7 @@ export function Register(name,email,password) {
 }
 
 export function ChangeDp(imageurl) {
+    console.log("Comes to ChangeDP");
     return dispatch => {
         dispatch({
             type: CHANGEDP,
@@ -83,6 +87,7 @@ export function FriendMail(friendmail) {
 }
 
 export function Online(email,password) {
+    console.log("Comes to Online");
     return dispatch => {
         dispatch({
             type: ONLINE,
