@@ -4,24 +4,12 @@ import React from 'react';
 import { Route, Link } from 'react-router-dom'
 //import $ from 'jquery'
 import './index.css';
-//import { connect } from 'react-redux';
-
-
-
-/*
-function formatAMPM(date) {
-    var hours = date.getHours();
-    var minutes = date.getMinutes();
-    var ampm = hours >= 12 ? 'PM' : 'AM';
-    hours = hours % 12;
-    hours = hours ? hours : 12; // the hour '0' should be '12'
-    minutes = minutes < 10 ? '0'+minutes : minutes;
-    var strTime = hours + ':' + minutes + ' ' + ampm;
-    return strTime;
-}            
-*/
-
-
+import { bindActionCreators } from 'redux'
+//import { MapStateToProps } from 'react-redux';
+//import { MapDispatchToProps } from 'react-redux';
+import { connect } from 'react-redux';
+import { msg_successful } from '../../../modules/messages_reducer'
+import { get_all_msgs } from '../../../modules/messages_reducer'
 
 //-- No use time. It is a javaScript effect.
 
@@ -60,18 +48,43 @@ function formatAMPM(date) {
 // eslint-disable-next-line 
 
 
-const handleKeyPress = (event) => {
-    if(event.key ==='Enter'){
-    var text2 = document.getElementById('mytext').value;
-    
-        alert(text2)
+class AppChatArea extends React.Component {
+
+    handleKeyPress = (event) => {
+        if(event.key ==='Enter'){
+        var text2 = document.getElementById('mytext').value;
+            //this.state.a_msg = text2
+            
+            //var test = this.props.get_all_msgs()
+            //alert(test)
+            //var array = this.props.get_all_msgs()
+
+            this.props.msg_successful(text2)
+            //this.props.messages.map(all_msgs)
+        }
+        this.forceUpdate();
+
     }
-}
+
+    
+
+    addMessage() {
+        return this.props.msg_set.map((msg) => {
+          return(
+             
+            <li >
+                <div class="msj macro">
+                    <div class="text text-l">
+                        
+                        <p key={msg.id}><font color="white">{msg.msg}</font></p>
+                    </div>
+                </div>
+            </li>
+          );
+        });
+      }
 
 
-
-
-export default class AppChatArea extends React.Component {
   constructor(props) {
     super(props);
 
@@ -79,6 +92,7 @@ export default class AppChatArea extends React.Component {
     this.state = {
       isOpen: false
     };
+   
   }
   toggle() {
     this.setState({
@@ -93,7 +107,7 @@ export default class AppChatArea extends React.Component {
         <div>
             <div className="col-lg-12  frame test">
                 <ul class="msgs">
-
+                    {this.addMessage()}
                 </ul>
         
             </div>
@@ -102,7 +116,7 @@ export default class AppChatArea extends React.Component {
                 <button type="button" class="btn attachmentbtn">+</button>                      
                 <div class="text text-r" style={{background: 'whitesmoke !important'}}>
 
-                    <input class="mytext" id='mytext' onKeyPress={handleKeyPress} placeholder="Type a message"/>
+                    <input class="mytext" id='mytext' onKeyPress={this.handleKeyPress.bind(this)} placeholder="Type a message"/>
                 </div> 
             </div>
         </div>
@@ -110,3 +124,18 @@ export default class AppChatArea extends React.Component {
     }
 }
 
+const mapStateToProps = state => ({
+    msg_set: state.msgs.msg_set 
+  })
+
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+    msg_successful,
+    get_all_msgs
+  }, dispatch)
+
+
+export default connect(
+    mapStateToProps, 
+    mapDispatchToProps
+  )(AppChatArea)
