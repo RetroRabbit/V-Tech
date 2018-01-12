@@ -1,10 +1,5 @@
 import React from 'react';
-//import { Component } from "react";
-// eslint-disable-next-line
-import { Route, Link } from 'react-router-dom'
-//import ReactDOM from 'react-dom'
-//import { Button } from 'reactstrap';
-//import NavLink from "react-router-dom"
+import { Link } from 'react-router-dom'
 import { push } from 'react-router-redux'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
