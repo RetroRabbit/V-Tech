@@ -5,19 +5,38 @@ import SideNav from 'react-sidenav';
 import './index.css'
 import { connect } from 'react-redux';
 
+import { bindActionCreators } from 'redux';
+import { get_convo } from '../../../modules/chats_reducer';
+//import { append_chat } from '../../../modules/chats_reducer'
+
+/*function link_chat (){
+  var elem = document.getElementById("pull_msg")
+  var person_id = elem.className()
+  get_convo(person_id);
+}*/
+
+
 class AppSideBar extends React.Component {
 
+  link_chat = (event) => {
+    var active_id = event.target.id;
+    this.props.get_convo(active_id);
+    
+  }
+
+
   createChatListItems() {
-    return this.props.chats.map((chat) => {
-      return(
-         
-        <div class="chat">
+    return this.props.friends.map((friend) => {
+    
+      return(   
+        <div class="chat" >
         
-          <h5 class="chat_friend_name"><img class="chat_user_pic" src={require("../profile/kitten.jpg")} alt={"Profile Pic"} ></img>Dummy Name</h5>
-          <div class="lst_msg"><span key={chat.id} >{chat.last_message}</span>
+          <h5 class="chat_friend_name" onClick={this.link_chat.bind(this)} id={friend.friend_id}><img class="chat_user_pic" src={require("../profile/kitten.jpg")} alt={"Profile Pic"} ></img>{friend.name}</h5>
+          <div class="lst_msg"><span id="pull_msg" key={friend.friend_id}>{friend.last_msg}</span>
           </div>
         </div>
       );
+  
     });
   }
 
@@ -48,22 +67,7 @@ class AppSideBar extends React.Component {
                   </div>
 
                   <div class="open_chats">
-                      <div class="chat">
-                        <h5 class="chat_friend_name"><img class="chat_user_pic" src={require("../profile/kitten.jpg")} alt={"Profile Pic"} ></img>Shingai Pedzisayi</h5>
-                        <div class="lst_msg"><span>Hey, are free tomorrow evening? Was wondering if you'd be willing to teach me to cook...
-                          no ulterior motive 0_0'...hehe</span>
-                        </div>
-                      </div>
-                      <div class="chat">
-                        <h5 class="chat_friend_name"><img class="chat_user_pic" src={require("../profile/kitten.jpg")} alt={"Profile Pic"}></img>Donald Bridle</h5>
-                        <div class="lst_msg"><span>Is there still meat in the fridge?</span>
-                        </div>
-                      </div>
-                      <div class="chat">
-                        <h5 class="chat_friend_name"><img class="chat_user_pic" src={require("../profile/kitten.jpg")} alt={"Profile Pic"} ></img>John Snow</h5>
-                        <div class="lst_msg"><span>Blah blah blah blah blah blah blah blah</span>
-                        </div>
-                      </div>
+                      
 
                       {this.createChatListItems()}
                       
@@ -75,11 +79,26 @@ class AppSideBar extends React.Component {
   }
 }
 
-function mapStateToProps(state) {
+const mapStateToProps = state => ({
+  friends: state.chats.friends,
+  convo: state.chats.current_convo
+})
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+  get_convo,
+}, dispatch)
+
+
+/*export default connect(
+  mapStateToProps, 
+  mapDispatchToProps
+)(AppChatArea)*/
+
+/*function mapStateToProps(state) {
   return {
     chats: state.chats, 
    users: state.users
   };
-}
+}*/
 
-export default connect(mapStateToProps)(AppSideBar);
+export default connect(mapStateToProps,mapDispatchToProps)(AppSideBar);

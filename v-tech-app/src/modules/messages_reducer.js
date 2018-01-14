@@ -3,9 +3,14 @@ export const GET_ALL = 'messages_reducer/GET_ALL'
 
 
   const initialState = {
-  msg_set: [{id: 1, msg: "This is a radio message..."},
-  {id: 2, msg: "Another one"},
-  {id: 3, msg: "The last"}]}
+  msg_set: [{id: 1,  msg: "This is a radio message...", msg_time:""},
+  {id: 2, friend_id: 1, msg: "Another one", msg_time:""},
+  {id: 3, friend_id: 3, msg: "The last", msg_time:""},
+  {id: 4, friend_id: 3, msg: "Why do you keep ignoring me?", msg_time:""},
+  {id: 5, friend_id: 3, msg: "Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah", msg_time:""},
+  {id: 6, friend_id: 4, msg: "Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah", msg_time:""},
+  {id: 7, friend_id: 4, msg: "Was too lazy to type a another message...-_-", msg_time:""}]
+                        }
 
 
 export default (state = initialState, action) => {
@@ -33,13 +38,19 @@ export default (state = initialState, action) => {
     }
 }
 
-export const msg_successful = (text2) => {
+export const msg_successful = (msg_id, text2, recipient) => {
+    var d = new Date();
+    var hours = d.getHours();
+    var minutes = d.getMinutes();
 
         return dispatch => {
             dispatch({
               type: SEND,
-              payload: {id: 4,
-              msg: text2}
+              payload: {id: msg_id,
+              friend_id: recipient,
+              msg: text2,
+              msg_time: [hours, minutes]
+              }
         })
     }
 }

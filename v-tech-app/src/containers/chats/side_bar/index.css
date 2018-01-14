@@ -30,10 +30,16 @@
     line-height: 40px;
     color: rgb(122, 121, 121);
     background-color: rgb(233, 231, 231);
+    cursor: pointer;
 }
 .chat{
     border-bottom: 1px solid lightgrey;
     padding-top: 15px;
+    display: block;
+}
+.chat:hover{
+    
+    background-color: lightgrey;
 }
 .chat:first-child{
     background-color: rgb(245, 242, 242)

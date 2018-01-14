@@ -3,11 +3,9 @@
     padding:10px;
     background:whitesmoke;
 }
-.text{
-    width:75%;
-    display:flex;
-    flex-direction:column;
-}
+
+
+
 .text > p:first-of-type{
     width:100%;
     margin-top:0;
@@ -22,10 +20,8 @@
     margin-bottom:-7px;
     margin-top:auto;
 }
-.text-l{
-    float:left;
-    padding-right:10px;
-}        
+
+
 .text-r{
     float:right;
     padding-left:10px;
@@ -54,7 +50,7 @@
 }
 .frame{
     background:rgb(243, 243, 243);
-    height:410px;
+    height:480px;
     padding:0px;
     width: 735px;
 
@@ -94,4 +90,9 @@ input:focus{
       flex-direction: column;
   }
 
- 
+.li_msg{
+    
+    display: inline-block;
+    padding: 10px;
+     
+}

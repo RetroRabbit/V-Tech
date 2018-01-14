@@ -8,7 +8,8 @@ import { bindActionCreators } from 'redux'
 //import { MapStateToProps } from 'react-redux';
 //import { MapDispatchToProps } from 'react-redux';
 import { connect } from 'react-redux';
-import { msg_successful } from '../../../modules/messages_reducer'
+//import { msg_successful } from '../../../modules/messages_reducer'
+import { append_chat } from '../../../modules/chats_reducer'
 import { get_all_msgs } from '../../../modules/messages_reducer'
 
 //-- No use time. It is a javaScript effect.
@@ -59,7 +60,7 @@ class AppChatArea extends React.Component {
             //alert(test)
             //var array = this.props.get_all_msgs()
 
-            this.props.msg_successful(text2)
+            this.props.append_chat(text2)
             //this.props.messages.map(all_msgs)
         }
         this.forceUpdate();
@@ -69,20 +70,27 @@ class AppChatArea extends React.Component {
     
 
     addMessage() {
-        return this.props.msg_set.map((msg) => {
-          return(
+        //return this.props.friends.map((friend) => {
+            return this.props.open_chat.map((each_msg) => {
+        
+            return(
              
+            
             <li >
-                <div class="msj macro">
-                    <div class="text text-l">
+                <div class="msj macro li_msg">
+                    <div class="text">
                         
-                        <p key={msg.id}><font color="white">{msg.msg}</font></p>
+                        <p><font color="white">{each_msg}</font></p>
                     </div>
                 </div>
             </li>
+          
           );
-        });
-      }
+        }
+        
+        );
+    }
+    
 
 
   constructor(props) {
@@ -125,12 +133,16 @@ class AppChatArea extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    msg_set: state.msgs.msg_set 
+    //msg_set: state.msgs.msg_set 
+    //convo: state.chats.friends
+    friends: state.chats.friends,
+    open_chat: state.chats.current_convo
   })
 
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-    msg_successful,
+    //msg_successful,
+    append_chat,
     get_all_msgs
   }, dispatch)
 
