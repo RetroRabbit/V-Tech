@@ -4,8 +4,8 @@ import { push } from 'react-router-redux'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import './css_lgn/login.css'
-import {Online} from '../../reducers/userreducer'
-import {login_successful, login_unsuccessful} from '../../modules/loginreducer'
+import {Online, ChangeDp} from '../../reducers/userregisterreducer'
+import {login_successful, login_unsuccessful} from '../../reducers/loginreducer'
 
 class Home extends Component {
 
@@ -35,19 +35,10 @@ class Home extends Component {
   }
 
   checkDetails() {
-    for (var i=0;i<this.props.users.length;i++) {
-      if (this.state.email === this.props.users[i].email && this.state.password === this.props.users[i].password) {
-        this.props.Online(this.props.users[i].name,this.props.users[i].email);
+        this.props.Online(this.state.email,this.state.password);
+        this.props.ChangeDp("../containers/chats/profile/kitten.jpg");
         this.props.login_successful();
         this.props.changePage();
-      } else {
-        this.props.login_unsuccessful();
-      }
-    }
-    this.setState({
-      email: '',
-      password: ''
-    });
   }
 
   updateInputEmail(event) {
@@ -65,9 +56,8 @@ class Home extends Component {
 }
 
 const mapStateToProps = state => ({
-  users: state.users,
-  name: state.userreducer.name,
-  email: state.userreducer.email,
+  name: state.userregisterreducer.name,
+  email: state.userregisterreducer.email,
   isLogInPending: state.loginreducer.isLogInPending,
   isLogInSucess: state.loginreducer.isLogInSucess,
   isLogInFail: state.loginreducer.isLogInFail
@@ -75,6 +65,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   Online,
+  ChangeDp,
   login_successful,
   login_unsuccessful,
   changePage: () => push('/chats')

@@ -1,10 +1,19 @@
-import { combineReducers} from 'redux'
-import UserReducer from './reducer_users'
-import LastChatReducer from './reducer_chats'
+import { combineReducers } from 'redux'
+import { routerReducer } from 'react-router-redux'
 
-const allReducers = combineReducers({
-    users: UserReducer,
-    chats: LastChatReducer
-});
+import loginreducer from './loginreducer'
 
-export default allReducers
+import messages_reducer from '../modules/messages_reducer'
+import reducer_convo from '../reducers/reducer_convo'
+import chats_reducer from '../modules/chats_reducer'
+import userregisterreducer from './userregisterreducer'
+
+export default combineReducers({
+  routing: routerReducer,
+  loginreducer,
+  msgs: messages_reducer,
+  messages: reducer_convo,
+  userregisterreducer,
+  chats: chats_reducer
+
+})

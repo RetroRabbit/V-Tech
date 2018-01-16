@@ -54,6 +54,7 @@ export default (state = initialState, action) => {
             //alert("count " + state.friends[2].name)
             for (var j=0; j<state.friends.length; j++){
                // alert(state.friends[j].friend_id +" = "+state.current_id)
+                // eslint-disable-next-line
                 if (state.friends[j].friend_id == state.current_id){
                     //alert("The for loop runs")
                     state.current_convo = state.friends[j].chat
@@ -69,6 +70,7 @@ export default (state = initialState, action) => {
 
         case APPEND_CONVO:
             for (var i=0; i<state.friends.length; i++){
+                // eslint-disable-next-line
                 if (state.friends[i].friend_id == state.current_id){
                     
                     state.friends[i].chat.push(action.payload.msg)
