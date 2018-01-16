@@ -11,6 +11,7 @@ import { connect } from 'react-redux';
 //import { msg_successful } from '../../../modules/messages_reducer'
 import { append_chat } from '../../../modules/chats_reducer'
 import { get_all_msgs } from '../../../modules/messages_reducer'
+import { chats_on_load } from '../../../modules/chats_reducer'
 
 //-- No use time. It is a javaScript effect.
 
@@ -49,6 +50,16 @@ import { get_all_msgs } from '../../../modules/messages_reducer'
 // eslint-disable-next-line 
 
 
+/*window.onload = function () {
+    if (! localStorage.justOnce) {
+        localStorage.setItem("justOnce", "true");
+        alert("This works")
+        window.location.reload();
+        this.forceUpdate()
+    }
+}*/
+
+
 class AppChatArea extends React.Component {
 
     handleKeyPress = (event) => {
@@ -61,11 +72,15 @@ class AppChatArea extends React.Component {
             //var array = this.props.get_all_msgs()
 
             this.props.append_chat(text2)
+
             //this.props.messages.map(all_msgs)
         }
         this.forceUpdate();
+        
 
     }
+
+    
 
     
 
@@ -120,8 +135,9 @@ class AppChatArea extends React.Component {
         
             </div>
 
+            <button type="button" class="btn attachmentbtn">+</button> 
             <div class="msj-rta1 macro msg_input">
-                <button type="button" class="btn attachmentbtn">+</button>                      
+                                     
                 <div class="text text-r" style={{background: 'whitesmoke !important'}}>
 
                     <input class="mytext" id='mytext' onKeyPress={this.handleKeyPress.bind(this)} placeholder="Type a message"/>
@@ -143,7 +159,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => bindActionCreators({
     //msg_successful,
     append_chat,
-    get_all_msgs
+    get_all_msgs,
+    chats_on_load
   }, dispatch)
 
 

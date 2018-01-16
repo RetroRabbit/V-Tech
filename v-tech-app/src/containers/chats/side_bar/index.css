@@ -15,9 +15,14 @@
 .open_chats{
     height: 410px;
     width: 100%;
+    /*overflow: scroll;*/
     overflow: scroll;
+    height:  565px;
 }
-
+::-webkit-scrollbar{
+    /*border: 2px solid red !important;*/
+    
+}
 
 .chat_friend_name{
     margin-left: 20px;

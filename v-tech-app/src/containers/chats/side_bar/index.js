@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 
 import { bindActionCreators } from 'redux';
 import { get_convo } from '../../../modules/chats_reducer';
+import { chats_on_load } from '../../../modules/chats_reducer'
 //import { append_chat } from '../../../modules/chats_reducer'
 
 /*function link_chat (){
@@ -23,7 +24,7 @@ class AppSideBar extends React.Component {
     this.props.get_convo(active_id);
     
   }
-
+  
 
   createChatListItems() {
     return this.props.friends.map((friend) => {
@@ -36,7 +37,6 @@ class AppSideBar extends React.Component {
           </div>
         </div>
       );
-  
     });
   }
 
@@ -56,6 +56,9 @@ class AppSideBar extends React.Component {
   render() {
     return (
       <div class="container">
+      <script>
+        {this.props.chats_on_load()}
+      </script>
         <div class="row">
                 <div class="side_bar"> 
                   <div class="search_bar">
@@ -86,6 +89,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   get_convo,
+  chats_on_load
 }, dispatch)
 
 
