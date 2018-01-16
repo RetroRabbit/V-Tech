@@ -33,6 +33,7 @@ render(
      <Route exact path="/register_three" component={Lgn_three} />
      <Route exact path="/chats" component={AppChat} />
      <Route exact path="/profile" component={Profile} />
+        
       </div>
     </ConnectedRouter>
   </Provider>,

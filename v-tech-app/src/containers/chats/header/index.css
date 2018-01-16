@@ -1,239 +1,137 @@
-body {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
 
-  }
- 
-  
-.header_main{
-  margin-top: 0;
-  width: 1250px;
-  margin: auto;
+.my_nav{
+  background-color: #01B9BD;
 }
 
-  /* Style the search field */
-  form.example input[type=text] {
-    padding: 10px;
-    font-size: 17px;
-    border: 1px solid grey;
-    float: left;
-    width: 80%;
-    background: #f1f1f1;
-  }
-  
-  
-  form.example button:hover {
-    background: #0b7dda;
-  }
-  
-  /* Clear floats */
-  form.example::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
+.drop_nav:hover {
+  display: show;
+}
 
-   
-  .header{
-   
-    background-color: #01B9BD !important;
-    color: #01B9BD;
-    
-  }
-
-   .imgs{
-    height: 10px;
-    margin-top: -13px;
-   }
-  
-   .text_box {
-    border-radius: 50px 50px 50px 50px !important;
-    border: none !important;
-    background-color: rgb(243, 243, 243) !important;
-    color: gray !important;
-  }
-  
-  /* dropdown button Change color on hover */
-  
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    margin-left: -34px;
-    background-color: #f9f9f9;
-    width: 300px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
-  .dropdown-content a {
-    color: black;
-    text-decoration: none;
-  
-  }
-  
-  .dropdown-content a:hover {background-color: #f1f1f1}
-  
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-  
-  .dropdown:hover .dropbtn {
-    background-color: #3e8e41;
-  }body {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-  }
-  * {
-    box-sizing: border-box;
-  }
-  
-  /* Style the search field */
-  form.example input[type=text] {
-    padding: 10px;
-    font-size: 17px;
-    border: 1px solid grey;
-    float: left;
-    width: 80%;
-    background: #f1f1f1;
-  }
-  
-  
-  form.example button:hover {
-    background: #0b7dda;
-  }
-  
-  /* Clear floats */
-  form.example::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-  
-   
-  .header{
-   
-    background-color: #01B9BD !important;
-    color: #01B9BD;
-    
-  }
-  
-   div.sidebar{
-    box-shadow: 3px 5px 8px #666888;
-    width: 300px;
-    height:auto;
-    background-color: #fefdfb;
-   }
-  
-  .img1_i{
-    height: 80px;
-    width: 80px;
-  }
-  .img2_i{
-    height: 53px;
-    width: 53px;
-    border-radius: 100%;
-    margin-left: 20px;
-    margin:auto;
-  }
-  .img_box{
-    border-radius: 100%;
-    padding: 3px;
-    margin-top: 9px;
-  }
-  .img2{
-    float: right;
-    
-  }
-  .img1{
-    float: right;
-  }
-  .nav_row{
-    float: right;
-    height: 50px;
-    margin-left: 600px;
-  }
-  .head_nav{
-    float: right;
-  }
-  
-   .text_box {
-    border-radius: 50px 50px 50px 50px !important;
-    border: none !important;
-    background-color: rgb(243, 243, 243) !important;
-    color: gray !important;
-  }
-  
-  /* dropdown button Change color on hover */
-
-  
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    margin-left: -34px;
-    background-color: #f9f9f9;
-    width: 300px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
-  .dropdown-content a {
-    color: black;
-    text-decoration: none;
-   display: block;
-  
-  }
-  
-  .dropdown-content a:hover {background-color: #f1f1f1}
-  
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-  
-  .dropdown:hover .dropbtn {
-    background-color: #3e8e41;
-  }
-
-  .btn_new_chat{
-    background-color: rgb(13, 171, 175);
-    width: 130px;
-    height: 48px;
-    border: none;
-    box-shadow: 0.5px 1px 2px 1px rgba(0, 0, 0, 0.14);
-    color: white;
-    margin-top: 5px;
-    font-size: 11pt;
-    
-  }
-  .btn_new_group{
-    background-color: rgb(13, 171, 175);
-    width: 130px;
-    height: 48px;
-    border: none;
-    box-shadow: 0.5px 1px 2px 1px rgba(0, 0, 0, 0.14);
-    color: white;
-    margin-top: 5px;
-    margin-left: 20px;
-    text-align: center;
-    font-size: 11pt;
-  }
-
-.user{
+.dropbtn {
+  background-color: #4CAF50;
   color: white;
-  margin-top: 5px;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
 }
 
-.search{
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+.btn_new_group {
+  height: 35px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  background-color: rgb(13, 171, 175);
+  box-shadow: 0.5px 1px 2px 1px rgba(0, 0, 0, 0.14);
+  width: 100px;
+  font-size: 10pt;
+  margin-left: 15px;
+  color: white !important;
+  padding-right: 95px;
+}
+.btn_new_chat{
+  margin-top: 5px;
+  color: white !important; 
+}
+.btn_new_group:hover{
+  background-color: #3e8e41;
+  cursor: pointer;
+}
+
+.dropbtn{
+  height: 35px;
+  line-height: 0px; 
+  background-color: rgb(13, 171, 175);
+  box-shadow: 0.5px 1px 2px 1px rgba(0, 0, 0, 0.14);
   margin-left: 20px;
+  box-shadow: 0.5px 1px 2px 1px rgba(0, 0, 0, 0.14);
+  width: 100px;
+  font-size: 10pt;
+}
+
+.holder{
+  float: right;
+  height: 70px;
+}
+
+.nav_imgs{
+  border-radius: 100%;
+}
+.nav_sec{
+
+}
+.navbar_imgs{
+
+}
+.img1{
+  height: 49px;
+  width: 49px;
+  margin-right: 10px;
+  margin-top: 9px;
+  background-color: white;
+  padding: 3px;
+  margin-left: 0px;
+  float: right;
+}
+.img2_o{
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  margin-right: 50px;
+  float: right;
+}
+.img2{
+  width: 70px;
+  height: 70px;
+  
+}
+
+.chat_user{
+  color: white;
+  height: 50px;
+  width: 150px;
+  height: 30px;
+  float: right;
+  text-align: center;
+  margin-top:25px;
+}
+
+.drp_box{
+
 }

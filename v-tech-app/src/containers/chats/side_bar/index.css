@@ -1,7 +1,7 @@
 .side_bar{
     box-shadow: 4px 0px 4px 0px lightgrey;
-    width: 350px;
-    margin-left: 153px;
+    width: 100%;
+    margin-left: 24px;
    }
 
 .search{
@@ -9,4 +9,57 @@
     border: 1px solid grey !important;
     color: black;
     font-size: 10pt;
+    margin-left: 20px;
+}
+
+.open_chats{
+    height: 410px;
+    width: 100%;
+    overflow: scroll;
+}
+
+
+.chat_friend_name{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 0px;
+    margin-bottom: 15px;
+    border-radius: 20px 20px 20px 20px;
+    font-size: 11pt;
+    height: 40px;
+    line-height: 40px;
+    color: rgb(122, 121, 121);
+    background-color: rgb(233, 231, 231);
+    cursor: pointer;
+}
+.chat{
+    border-bottom: 1px solid lightgrey;
+    padding-top: 15px;
+    display: block;
+}
+.chat:hover{
+    
+    background-color: lightgrey;
+}
+.chat:first-child{
+    background-color: rgb(245, 242, 242)
+}
+.lst_msg{
+    font-size: 10pt;
+    display: flex;
+    justify-content: flex-start;
+    padding: 0;
+    margin-bottom: 15px; 
+    
+}
+.lst_msg span{
+    text-align: left;
+}
+
+.chat_user_pic{
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    float: left;
+    margin-right: 10px;
 }

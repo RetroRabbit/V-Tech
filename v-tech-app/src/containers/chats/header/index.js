@@ -19,26 +19,25 @@ class AppHeader extends React.Component {
   }
   render() {
     return (
-            <div class="header_main head_div1 ">
-                <div className="header ">
-                <nav className="header navbar  navbar-toggleable-md navbar-light bg-faded">
-                    <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                      <span className="navbar-toggler-icon"></span>
-                    </button>
-                    
-                    <div className="collapse  navbar-collapse" id="navbarSupportedContent">
-                      <div className="navbar head_nav nav ">
-                      <form className="form-inline my-2 my-lg-0">
-                      <div class="dropdown">
-                        <button class="btn dropbtn btn_new_chat" type="submit">NEW CHAT</button>
-                        <div class="dropdown-content my-5">
-                          <a href=""><input class="form-control mr-sm-2 text_box my-4" type="text" placeholder="Friends Email..." /></a>
-                         
-                        </div>
-                      </div>
-                     <button className="btn btn_new_group" type="submit">NEW GROUP</button>
-                      </form>
-                      </div>
+
+
+      <div class="container menu_bar">
+        <div class="row ">
+
+            <nav class="col-lg-12 navbar navbar-toggleable-md navbar-light bg-faded my_nav">
+              
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+              <div class="holder col-sm-12">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="dropdown drpdwn">
+                    <button class="dropbtn btn btn_new_chat navbar-brand"><span>NEW CHAT</span></button>
+                    <div class="dropdown-content drp_box">
+                      
+                    <input type="text" class="form-control srchFrnd_field" id="friend_email" placeholder="Friend's Email"></input>
 
                       <div className="nav_row">
                           <div className="list-item my-4 dropdown">
@@ -55,14 +54,33 @@ class AppHeader extends React.Component {
                           <div class="img_box"><Link to="/profile" ><img img class="img2_i" src={require("../profile/kitten.jpg")} alt={"ChatterBox logo"} ></img></Link></div>
                           </div>
                       </div>
-                   
+
                       
                     </div>
-                  </nav>
+                  </div>
+                
+                  <button class="btn btn_new_group navbar-brand">NEW GROUP</button>
+                  
                 </div>
-            </div>
 
-             );
+                <div class="col-md-8 nav_sec">
+                
+                  <div class="navbar_imgs">
+                  <div class="img2_o "><img class="img2 nav_imgs" src={require("./Icon.png")} alt={"ChatterBox logo"} ></img></div>
+                  <Link to="/profile" ><img class="img1 nav_imgs" src={require("../profile/kitten.jpg")} alt={"Profile Pix"} ></img></Link>                  
+                  <h6 class="chat_user ">Name Surname</h6>
+
+                </div>
+              </div>
+              </div>       
+          </div>
+           </nav>
+            
+          </div>
+        </div>
+     
+
+    );
   }
 }
 
