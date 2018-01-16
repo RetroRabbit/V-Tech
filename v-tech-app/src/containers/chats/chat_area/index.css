@@ -95,8 +95,24 @@ input:focus{
 
 .li_msg{
     
-    display: inline-block;
+    display: inline;
     padding: 10px;
-     
+    padding-left: 15px;
+    border-radius: 20px;
+    min-width: 200px;
+    max-width: 450px;
 }
 
+.time{
+    clear: left;
+    font-size: 9pt;
+    color:  rgb(1, 185, 189);
+    margin-bottom: 10px;
+    padding-top: 5px;
+}
+
+.msg_text{
+    font-size: 11pt;
+    display: inline;
+    min-width: 200px;
+}

@@ -86,18 +86,21 @@ class AppChatArea extends React.Component {
 
     addMessage() {
         //return this.props.friends.map((friend) => {
-            return this.props.open_chat.map((each_msg) => {
+            return this.props.chat_set.current_convo.map((each_msg, index) => {
         
                 return(
                 
                 
                 <li class="msg_container">
-                    <div class="msj macro li_msg">
-                        <div class="text">
-                            
-                            <p><font color="white">{each_msg}</font></p>
+                    <div class="msj li_msg">
+                        <div class="msg_text">          
+                            {each_msg}
                         </div>
                     </div>
+                    <div class="time">
+                        {this.props.chat_set.current_times[index]}
+                    </div>
+                    
                 </li>
             
             );
@@ -152,9 +155,9 @@ const mapStateToProps = state => ({
     //msg_set: state.msgs.msg_set 
     //convo: state.chats.friends
     friends: state.chats.friends,
-    test: state.chats,
-    open_chat: state.chats.current_convo,
-    times: state.chats.current_times
+    chat_set: state.chats,
+    //open_chat: state.chats.current_convo,
+    //times: state.chats.current_times
   })
 
 
