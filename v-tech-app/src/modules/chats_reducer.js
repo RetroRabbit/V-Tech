@@ -28,7 +28,8 @@ export const CHATS_ON_LOAD = 'chats_reducer/CHATS_ON_LOAD'
         
             current_id: "",
             current_name: "",
-            current_convo: []
+            current_convo: [],
+            current_times: []
         }
 
 
@@ -63,6 +64,7 @@ export default (state = initialState, action) => {
                     //alert("The for loop runs")
                     state.current_convo = state.friends[j].chat
                     state.current_name = state.friends[j].name
+                    state.current_times = state.friends[j].msg_times
                     break
                 }
             }

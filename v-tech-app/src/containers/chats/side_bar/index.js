@@ -17,6 +17,7 @@ import { chats_on_load } from '../../../modules/chats_reducer'
 }*/
 
 
+
 class AppSideBar extends React.Component {
 
   link_chat = (event) => {
@@ -24,7 +25,8 @@ class AppSideBar extends React.Component {
     this.props.get_convo(active_id);
     
   }
-  
+
+
 
   createChatListItems() {
     return this.props.friends.map((friend) => {
@@ -56,9 +58,7 @@ class AppSideBar extends React.Component {
   render() {
     return (
       <div class="container">
-      <script>
         {this.props.chats_on_load()}
-      </script>
         <div class="row">
                 <div class="side_bar"> 
                   <div class="search_bar">
