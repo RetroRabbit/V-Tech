@@ -36,7 +36,7 @@ class Profile extends React.Component {
     let {imagePreviewUrl} = this.state;
     let $imagePreview = null;
     if (imagePreviewUrl) {
-      $imagePreview = (<img src={imagePreviewUrl} class="user_pic"/>);
+      $imagePreview = (<img src={imagePreviewUrl} alt={"User Pic"} class="user_pic"/>);
     }
     else {
        $imagePreview =   (<img src={require("./kitten.jpg")} alt={"ChatterBox logo"} class="user_pic" />); 
