@@ -6,7 +6,7 @@ export const CHATS_ON_LOAD = 'chats_reducer/CHATS_ON_LOAD'
 
 
   const initialState = {
-  friends: [{friend_id: 0, name: "Donald Bridle", chat: ["Blah blah blah blah blah blah blah blah"], last_msg: "", msg_times: []},
+  friends: [{friend_id: 0, name: "Donald Bridle", chat: ["Blah blah blah blah blah blah blah blah"], last_msg: "", msg_times: ["15:56"]},
         {friend_id: 1,
             name: "John Snow",
             chat: ["Was too lazy to type a another message...-_-","Hey, are you free tomorrow evening? Was wondering if you'd be willing to teach me to cook...no ulterior motive 0_0 hehe"], 
