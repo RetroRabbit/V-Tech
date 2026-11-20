@@ -11,6 +11,7 @@ import { connect } from 'react-redux';
 //import { msg_successful } from '../../../modules/messages_reducer'
 import { append_chat } from '../../../modules/chats_reducer'
 import { get_all_msgs } from '../../../modules/messages_reducer'
+import { chats_on_load } from '../../../modules/chats_reducer'
 
 //-- No use time. It is a javaScript effect.
 
@@ -49,6 +50,16 @@ import { get_all_msgs } from '../../../modules/messages_reducer'
 // eslint-disable-next-line 
 
 
+/*window.onload = function () {
+    if (! localStorage.justOnce) {
+        localStorage.setItem("justOnce", "true");
+        alert("This works")
+        window.location.reload();
+        this.forceUpdate()
+    }
+}*/
+
+
 class AppChatArea extends React.Component {
 
     handleKeyPress = (event) => {
@@ -61,32 +72,39 @@ class AppChatArea extends React.Component {
             //var array = this.props.get_all_msgs()
 
             this.props.append_chat(text2)
+
             //this.props.messages.map(all_msgs)
         }
         this.forceUpdate();
+        
 
     }
 
     
 
+    
+
     addMessage() {
         //return this.props.friends.map((friend) => {
-            return this.props.open_chat.map((each_msg) => {
+            return this.props.chat_set.current_convo.map((each_msg, index) => {
         
-            return(
-             
-            
-            <li >
-                <div class="msj macro li_msg">
-                    <div class="text">
-                        
-                        <p><font color="white">{each_msg}</font></p>
+                return(
+                
+                
+                <li class="msg_container">
+                    <div class="msj li_msg">
+                        <div class="msg_text">          
+                            {each_msg}
+                        </div>
                     </div>
-                </div>
-            </li>
-          
-          );
-        }
+                    <div class="time">
+                        {this.props.chat_set.current_times[index]}
+                    </div>
+                    
+                </li>
+            
+            );
+            }
         
         );
     }
@@ -120,8 +138,9 @@ class AppChatArea extends React.Component {
         
             </div>
 
+            <button type="button" class="btn attachmentbtn">+</button> 
             <div class="msj-rta1 macro msg_input">
-                <button type="button" class="btn attachmentbtn">+</button>                      
+                                     
                 <div class="text text-r" style={{background: 'whitesmoke !important'}}>
 
                     <input class="mytext" id='mytext' onKeyPress={this.handleKeyPress.bind(this)} placeholder="Type a message"/>
@@ -136,14 +155,17 @@ const mapStateToProps = state => ({
     //msg_set: state.msgs.msg_set 
     //convo: state.chats.friends
     friends: state.chats.friends,
-    open_chat: state.chats.current_convo
+    chat_set: state.chats,
+    //open_chat: state.chats.current_convo,
+    //times: state.chats.current_times
   })
 
 
 const mapDispatchToProps = dispatch => bindActionCreators({
     //msg_successful,
     append_chat,
-    get_all_msgs
+    get_all_msgs,
+    chats_on_load
   }, dispatch)
 
 

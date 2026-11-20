@@ -4,8 +4,6 @@
     background:whitesmoke;
 }
 
-
-
 .text > p:first-of-type{
     width:100%;
     margin-top:0;
@@ -42,6 +40,10 @@
    
     background:whitesmoke;
     bottom: 10px;
+    width: 735px;
+    margin-top: 15px;
+    height: 50px;
+    border-radius: 40px;
 }
 .msj{
     float:left;
@@ -50,9 +52,10 @@
 }
 .frame{
     background:rgb(243, 243, 243);
-    height:480px;
+    height:500px;
     padding:0px;
     width: 735px;
+    margin-bottom: 38px;
 
 }
 .frame > div:last-of-type{
@@ -92,7 +95,24 @@ input:focus{
 
 .li_msg{
     
-    display: inline-block;
+    display: inline;
     padding: 10px;
-     
+    padding-left: 15px;
+    border-radius: 20px;
+    min-width: 200px;
+    max-width: 450px;
+}
+
+.time{
+    clear: left;
+    font-size: 9pt;
+    color:  rgb(1, 185, 189);
+    margin-bottom: 10px;
+    padding-top: 5px;
+}
+
+.msg_text{
+    font-size: 11pt;
+    display: inline;
+    min-width: 200px;
 }
